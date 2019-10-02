@@ -1,0 +1,59 @@
+{% extends "base.html"%}
+
+{% block content %}
+    <h1>Add a Blog Entry</h1>
+    <form method='POST' action="/add-blog">
+    
+    <tr>
+        <label>
+            Title of your new blog:
+            <br>
+            <input type="text" name="blog-title" />
+        </label>
+</tr>
+<br>
+<br>
+<tr>
+        <label>
+            Your new blog:
+            <br>
+            <textarea rows="5" name = "blog"></textarea>
+          
+            </label>
+</tr>
+<br>
+<br>
+<tr>
+        <input type="submit" value="Add Entry"/>
+        </tr>
+        
+    </form>
+
+ <!-- <hr /> -->
+
+    {% if tasks|length ==0 %}
+    <p> No tasks yet </p>
+    {% else %}
+
+    <ul>
+        {%for task in tasks%}
+        <li><b><h2>{{task.name}}</h2></b>
+        
+        <h3>{{task.blog}}</h3>
+        <form method="POST" action="/delete-task" style = "display: inline-block;">
+            <input type="hidden" name="task-id" value="{{task.id}}" />
+        <input type="submit" value="Done!" />
+    </form></li>
+        {% endfor %}
+    </ul>
+
+    {% endif %}
+
+    <!-- <hr /> -->
+    <h2>Completed</h2></h2>
+    <ul>
+        {% for task in completed_tasks %}
+        <li>{{task.name}}</li>
+        {% endfor %}
+    </ul>
+    {% endblock %}

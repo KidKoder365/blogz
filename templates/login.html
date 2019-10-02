@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+ 
+    <h1>Log in to Get It Done!</h1>
+    <br>
+    <p>If you don't have an account, you may <a href="/register">register</a> for one.</p>
+        <form method="post" action="/login">
+            <table>
+                <tr>
+                    <td><label for="email">Email</label></td>
+                    <td>
+                    
+                        <input name="email" type="text" value="{{request.form['email']}}"></td>
+                        <td>
+                                {% if error %}
+                                <p class = 'error'></p>
+                                <span class="error">{{error}}</span>
+                                {% endif %}
+                          </td>
+                    
+
+                </tr>
+                <tr>
+
+                  <td><label for="password">Password</label></td>
+                    <td>
+                        <input name="password" type="password">
+                        <td>
+                        <span class="error">{{error1}}</span>
+                 </td>
+                </tr>
+        
+            </table>
+            <input type="submit" value = "Login" />
+        </form>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+   {% for task in tasks %}
+
+        <li><a href="/blogpost?{{id}}"><h2> {{task.name}}</h2></a>
+        
+        {{task.blog}}
+</li>
+        {% endfor %}
+
+
+
+
+
+{% endblock %}
