@@ -3,24 +3,52 @@
     <head>
         <title>{{title}}</title>
         <style>
+
             .error{
                 color:red;
             }
         </style>
 
     </head>
-    <body><tr>
+    <body>
+           
+        
+        <tr>
+            <td> 
+                    <a href="/"> Home </a>
+                    
+                    </td>
+                    <br>
+                    <td>
+
+
        <td> 
-            <a href="/blog">Main Blog Page</a>
+            <a href="/blog"> Main Blog Page </a>
             
             </td>
-            
+            <br>
             <td>
       
-        <a href="/newpost">Add a Blog Entry</a>
+       <a href="/newpost"> Add a Blog Entry </a>
         </td>
         
         </tr>
+        <br>
+    
+        <tr>
+            <td> 
+                <a href="/logout" > Logout </a>
+                 
+                 </td>
+                <br>
+                 
+                 <td>
+           
+             <a href="/login"> Login </a>
+             </td>
+             
+             </tr>
+            
 
  
 {% with messages = get_flashed_messages(with_categories=True) %}
@@ -33,6 +61,7 @@
 
         {% block content %}
         {% endblock %}
+        
 
     </body>
 </html>

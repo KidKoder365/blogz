@@ -10,10 +10,11 @@
     <ul>
         {%for task in tasks%}
         <!-- <li> -->
-            <a href="/blog?id={{task.id}}" ><h2> {{task.name}}</h2>
+            <a href="/blog?id={{task.id}}" ><h2> {{task.title}}</h2>
             <input type="hidden" name="task-id" value="{{task.id}}" /></a>
         
         {{task.blog}}
+        <p>written by <a href = "/blog?userid={{task.owner_id}}">{{task.owner.username}}</a></p>
 
 <!-- </li> -->
 <hr>

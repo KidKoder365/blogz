@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- TODO create signup form for user to signup that redirects to route handlers in main.py -->
+<form method="POST" action="/signup">
+    <table>
+        <tr>
+            <td><label for="username">Username</label></td>
+            <td>
+            
+                <input name="username" type="text" value="{{request.form['username']}}"></td>
+                <td>
+                        {% if error %}
+                        <p class = 'error'></p>
+                        <span class="error">{{error}}</span>
+                        {% endif %}
+                  </td>
+            
+
+        </tr>
+        <tr>
+
+          <td><label for="password">Password</label></td>
+            <td>
+                <input name="password" type="password">
+                <td>
+                <span class="error">{{error1}}</span>
+         </td>
+        </tr>
+        <tr>
+            <td><label for="verify">Verify Password</label></td>
+            <td>
+                <input name="verify" type="password" />
+            
+                <span class="error">{{error2}}</span>
+            </td>
+          
+        </tr>
+      
+    </table>
+    <input type="submit" value="Register"/>
+</form>
+
+
+
+{% endblock %}

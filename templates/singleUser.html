@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- display only the blogs associated with a single given author -->
+{% if blogsByAuthor|length ==0 %}
+    <p> No blogs yet </p>
+    {% else %}
+
+    <ul>
+        {%for entry in blogsByAuthor%}
+        <!-- <li> -->
+            <a href="/blog?id={{entry.id}}" ><h2> {{entry.title}}</h2>
+            </a>
+        
+       <p> {{entry.blog}} </p>
+       written by <a href = "/blog?userid={{entry.owner_id}}"> {{entry.owner.username}}</a>
+
+<!-- </li> -->
+<hr>
+        {% endfor %}
+    </ul>
+
+    {% endif %}
+
+{% endblock %}

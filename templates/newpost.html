@@ -9,8 +9,9 @@
     <label>
         Title of your new blog:
         <br>
-        <input type="text" name="blog-title" />
-        <input type="hidden" name="id" value="{{task.id}}" />
+        <input type="text" name="blog-title" value="{{blog_title}}" />
+        <input type="hidden" name="id" value="{{blog.owner_id}}" />
+
     </label>
 </tr>
 <br>
@@ -21,7 +22,7 @@
     <label>
         Your new blog:
         <br>
-        <textarea rows="5" name = "blog"></textarea>
+        <textarea rows="5" name = "blog">{{blog}}</textarea>
       
         </label>
 </tr>

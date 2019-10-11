@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
+<hr>
 
-<h1>{{task.name}}</h1>
-<p>{{task.blog}}</p>
+<h1>{{task.title}}</h1>
+<h2>{{task.blog}}</h2>
 
-
+<h5>written by <a href = "/blog?userid={{task.owner_id}}">{{username}}</a></h5>
 
 
 

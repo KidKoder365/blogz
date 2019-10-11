@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- TODO create login form for user to login that redirects to route handlers in main.py -->
+<h1>Log in to Blogz</h1>
+    <br>
+    <p><a href="/signup">Create Account</a></p>
+        <form method="POST" action="/login">
+            <table>
+                <tr>
+                    <td><label for="username">Username</label></td>
+                    <td>
+                    
+                        <input name="username" type="text" value="{{request.form['username']}}"></td>
+                        <td>
+                                {% if error %}
+                                <p class = 'error'></p>
+                                <span class="error">{{error}}</span>
+                                {% endif %}
+                          </td>
+                    
+
+                </tr>
+                <tr>
+
+                  <td><label for="password">Password</label></td>
+                    <td>
+                        <input name="password" type="password">
+                        <td>
+                        <span class="error">{{error1}}</span>
+                 </td>
+                </tr>
+        
+            </table>
+            <input type="submit" value = "Login" />
+        </form>
+
+
+{% endblock %}
